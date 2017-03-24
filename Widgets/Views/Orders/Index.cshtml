@@ -1,0 +1,28 @@
+﻿@model List<Widgets.Models.PurchaseOrder>
+@{
+    ViewBag.Title = "Orders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List of Orders</h2>
+
+<table cellpadding="5" cellspacing="5">
+  <tr>
+    <td>ID</td>
+    <td>Name</td>
+    <td>Type</td>
+    <td>Description</td>
+    <td>Price</td>
+  </tr>
+  @foreach (var order in Model)
+  {
+      <tr>
+        <td>@order.Id</td>
+        <td>@order.ProductId</td>
+        <td>@order.UserId</td>
+        <td>@order.Quantity</td>
+        <td>@order.TotalPrice</td>
+      </tr>
+  }
+
+</table>

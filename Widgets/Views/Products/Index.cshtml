@@ -1,0 +1,28 @@
+﻿@model List<Widgets.Models.Product>
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List of Products</h2>
+
+<table cellpadding="5" cellspacing="5">
+  <tr>
+    <td>ID</td>
+    <td>Name</td>
+    <td>Type</td>
+    <td>Description</td>
+    <td>Price</td>
+  </tr>
+  @foreach (var product in Model)
+  {
+      <tr>
+        <td>@product.Id</td>
+        <td>@product.Name</td>
+        <td>@product.Type.Description</td>
+        <td>@product.Description</td>
+        <td>@product.Price</td>
+      </tr>
+  }
+
+</table>
